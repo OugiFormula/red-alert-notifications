@@ -19,7 +19,7 @@ def handlerhe(List_Alerts):
     City=alert['name_en']
     Region = alert['zone_en']
     print("New Alert "+ City +" Region: " + Region + "at " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
-    ts.show_toast("צבע אדום!","ב" + Cityhe + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"),duration=60)
+    ts.show_toast("צבע אדום!","ב" + Cityhe + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
 
 #English
 def handler(List_Alerts):
@@ -27,7 +27,7 @@ def handler(List_Alerts):
     City=alert['name_en']
     Region = alert['zone_en']
     print("New Alert "+ City +" Region: " + Region + "at " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
-    ts.show_toast("RED ALERT!","At " + City + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"),duration=60)
+    ts.show_toast("RED ALERT!","At " + City + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
 
 #Get user input if they want Hebrew or English notification
 heoren = input("Please choose HE(עברית) or EN(אנגלית):")
