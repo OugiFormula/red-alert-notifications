@@ -4,7 +4,7 @@ This small python script will use windows 10 notifications to give you alerts ab
 
 ## Getting Started
 
-You need to make sure you have the right enviorment and libraries installed from the requirements.txt file.
+You need to make sure you have the right libraries installed from the requirements.txt file.
 
 You can do so by:
 
