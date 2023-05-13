@@ -1,14 +1,13 @@
 import tzevaadom
 import sys
 import datetime
-from win10toast import ToastNotifier
+from windows_toasts import WindowsToaster, ToastImageAndText1, ToastDisplayImage
 
-ts=ToastNotifier()
+toaster = WindowsToaster('RED ALERT!')
 
 #Take current time
 
 currentime= datetime.datetime.now()
-
 
 ###this command will run when the the library tzevaadom respond with information
 
@@ -19,7 +18,10 @@ def handlerhe(List_Alerts):
     City=alert['name_en']
     Region = alert['zone_en']
     print("New Alert "+ City +" Region: " + Region + "at " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
-    ts.show_toast("צבע אדום!","ב" + Cityhe + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
+    newToast = ToastImageAndText1()
+    newToast.AddImage(ToastDisplayImage.fromPath('siren.png'))
+    newToast.SetBody("צבע אדום!","ב" + Cityhe + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
+    toaster.show_toast(newToast)
 
 #English
 def handler(List_Alerts):
@@ -27,7 +29,10 @@ def handler(List_Alerts):
     City=alert['name_en']
     Region = alert['zone_en']
     print("New Alert "+ City +" Region: " + Region + "at " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
-    ts.show_toast("RED ALERT!","At " + City + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
+    newToast = ToastImageAndText1()
+    newToast.AddImage(ToastDisplayImage.fromPath('siren.png'))
+    newToast.SetBody("RED ALERT!","At " + City + " " + currentime.strftime("%Y-%m-%d %H:%M:%S"))
+    toaster.show_toast(newToast)
 
 #Get user input if they want Hebrew or English notification
 heoren = input("Please choose HE(עברית) or EN(אנגלית):")
@@ -42,5 +47,3 @@ elif(heoren == "EN"):
 else:
   print("Wrong input! please try again.")
   exit()
-
-
