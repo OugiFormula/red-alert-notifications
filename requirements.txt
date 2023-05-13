@@ -1,2 +1,2 @@
-win10toast
+windows-toasts
 tzevaadom
