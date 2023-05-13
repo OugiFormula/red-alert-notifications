@@ -1,6 +1,6 @@
 # Red Alert Notifications
 
-This small python script will use windows 10 notifications to give you alerts about missiles.
+This small python script will use windows 10 & 11 notifications to give you alerts about missiles.
 
 ## Getting Started
 
